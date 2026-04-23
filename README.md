@@ -79,3 +79,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## ✨ Key Features
+- *Real-time Audio Capture:* Leverages the MediaRecorder API for seamless in-browser recording.
+- *AI Transcription:* Uses OpenAI Whisper-1 to convert clinical dialogue into text with high accuracy.
+- *Intelligent SOAP Structuring:* Automatically filters "small talk" and formats notes into Subjective, Objective, Assessment, and Plan (SOAP) categories.
+- *Dental Standard Compliance:* Hardcoded logic to prioritize the Universal Numbering System (1-32) and dental shorthand (MOD, carie, prophy).
+- *One-Click Export:* Integrated "Copy to Clipboard" functionality for quick entry into Dental Management Systems.
+
+## 🛠️ Tech Stack
+- *Frontend:* Next.js 15 (App Router), TypeScript, Tailwind CSS
+- *AI Models:* OpenAI Whisper (Speech-to-Text), GPT-4o (Clinical Reasoning)
+- *State Management:* React Hooks (useState, useRef)
+- *Deployment:* Git/GitHub for version control
+
+## 🦷 Project Inspiration
+This project was developed to streamline the clinical documentation process for dental practices. By automating the transition from patient conversation to structured SOAP notes, the goal is to reduce "administrative burnout" and allow providers to focus more on patient care rather than the computer screen.
