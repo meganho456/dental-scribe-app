@@ -1,3 +1,48 @@
+# Dental Scribe App
+
+A small Next.js app that records audio, transcribes it with OpenAI Whisper, and converts the transcript into a concise Dental SOAP note (Subjective, Objective, Assessment, Plan) using GPT-4o. Uses the Universal Tooth Numbering system (1–32).
+
+## Quick links
+- Transcription action: `app/actions/transcribeAudio.ts`
+- Route: `app/api/transcribe/route.ts`
+- UI / recorder: `app/page.tsx`
+
+## Prerequisites
+- Node 18+ and npm
+- An OpenAI API key with access to the required models
+
+## Environment
+Create a `.env.local` file in the project root:
+
+```
+OPENAI_API_KEY=sk-...
+```
+
+## Install & Run (development)
+
+```bash
+npm install
+npm run dev
+# open http://localhost:3000
+```
+
+## Usage
+- Click “Start Clinical Session” to record, click “Stop Recording” to stop.
+- The app sends the audio to `/api/transcribe`, obtains the raw transcript, then generates a condensed SOAP clinical note and displays it in the `Clinical Notes` textarea.
+
+## API (local)
+- POST `/api/transcribe` — multipart form-data with `file` field. Returns JSON: `{ "text": "...raw transcript...", "note": "...SOAP note..." }`
+
+## Testing & troubleshooting
+- Ensure `OPENAI_API_KEY` is set and server restarted after edits.
+- If you get file-format errors, send the file with an explicit filename or ensure the server converts blobs to Buffer before sending to OpenAI.
+- Inspect server console for transcription logs.
+
+## Contributing / PR
+- Create a feature branch, push, open PR (template available at `.github/PULL_REQUEST_TEMPLATE.md`).
+
+## License
+- MIT
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
